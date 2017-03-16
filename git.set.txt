@@ -1,0 +1,12 @@
+git 처리 순서
+
+1. 루트로 정할 디렉토리에서 깃 초기화
+	> git intit
+
+2. 상태 확인 (버전관리가 안되고 있는 것들 체크)
+	> git status
+
+3. git 버전 관리 대상으로 추가
+	> git add * (or git add index.html)
+
+4.
