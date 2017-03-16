@@ -1,28 +1,36 @@
 {
   "name": "ryu11",
-  "version": "0.0.1",
-  "description": "test",
-  "author": "ryu11",
+  "version": "1.0.0",
+  "description": "gulp auto system",
+  "main": "config.js",
   "dependencies": {
-    "del": "^1.1.1"
-  },
-  "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
-    "gulp-connect": "^5.0.0",
-    "gulp-connect-multi": "^1.0.8",
-    "gulp-html-prettify": "0.0.1",
-    "gulp-if": "^1.2.5",
-    "gulp-jade": "^0.10.0",
-    "gulp-plumber": "^0.6.6",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "1.2.4",
+    "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.1.0",
     "gulp-uglifycss": "^1.0.6",
     "gulp-util": "^3.0.8",
-    "gulp-watch": "^3.0.0",
+    "gulp-connect": "^5.0.0",
     "vinyl-ftp": "^0.6.0"
-  }
+  },
+  "devDependencies": {
+    "gulp.spritesmith": "^6.3.0"
+  },
+  "scripts": {
+    "test": "gulp default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryu11kr/gp.git"
+  },
+  "keywords": [
+    "gulp",
+    "system"
+  ],
+  "author": "ryu11",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ryu11kr/gp/issues"
+  },
+  "homepage": "https://github.com/ryu11kr/gp#readme"
 }

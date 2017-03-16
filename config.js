@@ -5,6 +5,7 @@ module.exports = function() {
 		csssrc       = 'root', // css 가 있는 디렉토리 경로 변수선언
 		scsssrc       = 'root', // scss 가 있는 디렉토리 경로 변수선언
 		jssrc       = 'root', // js 가 있는 디렉토리 경로 변수선언
+		spritesrc = 'root',
 
 		// html 셋팅
 		html = {
@@ -50,14 +51,25 @@ module.exports = function() {
 			open: {
 				browser: 'chrome' //서버 구동시 자동으로 띄울 브라우저 선택 chrome, firefox, iexplore, opera, safari
 			}
+		},
+		// 스프라이트 이미지 셋팅
+		sprite = {
+			src  : spritesrc + '/static/img/sprite/ico/*.png',
+			imgName: 'sp_all.png',	// 완성된 스프라이트 이미지의 파일명
+	        padding: 4,	// 이미지들간의 간격 설정
+	        cssName: 'sp_all.css', // 클래스파일명
+	        save_img: spritesrc + '/static/img/sprite/', // 이미지 저장 위치
+	        save_css: spritesrc + '/static/img/sprite/', // css 저장 위치
+	        algorithm: 'top-down' // top-down	left-right	diagonal	alt-diagonal	binary-tree
 		};
 
 	return {
-		htmlset : html,
-		cssset : css,
+		html_set : html,
+		css_set : css,
 		compress_css_set : compress_css,
-		scssset : scss,
-		jsset : js,
-		serverset : server
+		scss_set : scss,
+		js_set : js,
+		server_set : server,
+		sprite_set : sprite
 	};
 };
