@@ -1,36 +1,34 @@
 {
-  "name": "ryu11",
+  "name": "gulp-project",
   "version": "1.0.0",
-  "description": "gulp auto system",
-  "main": "config.js",
+  "description": "걸프 UI개발 시스템",
+  "main": "gulpfile.js & config.js",
   "dependencies": {
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
+    "gulp-connect": "^5.0.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.1.0",
     "gulp-uglifycss": "^1.0.6",
     "gulp-util": "^3.0.8",
-    "gulp-connect": "^5.0.0",
+    "gulp.spritesmith": "^6.3.0",
     "vinyl-ftp": "^0.6.0"
   },
-  "devDependencies": {
-    "gulp.spritesmith": "^6.3.0"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "gulp default"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryu11kr/gp.git"
+    "url": "https://github.com/ryu11kr/gp.git"
   },
   "keywords": [
-    "gulp",
-    "system"
+    "css minify",
+    "js minify",
+    "scss",
+    "image sprite",
+    "web server",
   ],
-  "author": "ryu11",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/ryu11kr/gp/issues"
-  },
-  "homepage": "https://github.com/ryu11kr/gp#readme"
+  "author": "류원일",
+  "license": "UNLICENSED"
 }
