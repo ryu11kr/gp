@@ -79,15 +79,15 @@ gulp.task('js', function() {
 });
 // 이미지 스프라이트
 gulp.task('sprite', function(){
-    var spritedata = gulp.src(config.spriteset.src)	// 스프라이트 시킬 타겟 이미지 설정
+    var spritedata = gulp.src(config.sprite_set.src)	// 스프라이트 시킬 타겟 이미지 설정
     .pipe(spritesmith({
-        imgName: config.spriteset.imgName,	// 완성된 스프라이트 이미지의 파일명
-        padding: config.spriteset.padding,	// 이미지들간의 간격 설정
-        cssName: config.spriteset.cssName, // 클래스파일명
-        algorithm: config.spriteset.algorithm // 이미지 배치 모양
+        imgName: config.sprite_set.imgName,	// 완성된 스프라이트 이미지의 파일명
+        padding: config.sprite_set.padding,	// 이미지들간의 간격 설정
+        cssName: config.sprite_set.cssName, // 클래스파일명
+        algorithm: config.sprite_set.algorithm // 이미지 배치 모양
     }))
-    spritedata.img.pipe(gulp.dest(config.spriteset.save_img)); // 이미지 저장 위치
-    spritedata.css.pipe(gulp.dest(config.spriteset.save_css)); // 클래스 저장 위치
+    spritedata.img.pipe(gulp.dest(config.sprite_set.save_img)); // 이미지 저장 위치
+    spritedata.css.pipe(gulp.dest(config.sprite_set.save_css)); // 클래스 저장 위치
 });
 // min.css 생성
 gulp.task('cssmin', function() {
