@@ -1,0 +1,13 @@
+@charset "UTF-8";
+$font-mg : Malgun Gothic,'맑은 고딕',AppleGothic,Dotum,'돋움',sans-serif;
+@mixin text-notover {
+	display:block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+@mixin position($type, $t, $l:18px) {
+	position:$type;
+	top:$t;
+	left:$l;
+}

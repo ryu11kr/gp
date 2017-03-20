@@ -1,13 +1,9 @@
 @charset "UTF-8";
-/* © charset setting output from css */ 
-// © = alt + numpad 0169*/
-// scss 에서만 표시되는 주석, css 에서는 삭제됨
 
+/* 
+	리셋 css 
+*/
 * {
 	margin:0;
 	padding: 0;
-}
-h1 {
-	margin: 40px;
-	color:#0000ff;
 }

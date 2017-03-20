@@ -19,7 +19,9 @@ module.exports = function() {
 		scss = {
 			src  : scsssrc + '/static/scss/*.scss', //scss 경로 및 대상 파일
 			compasssrc  : scsssrc + '/static/scss/', //compass 가 동작할 scss 경로
-			target  : csssrc + '/static/css' //css 로 변환할 위치
+			target  : csssrc + '/static/css', //css 로 변환할 위치
+			style: 'expanded', // css 아웃풋 설정, nested, expanded, compact, compressed
+			comments : false //true = css 의 코드가 어떤 scss 파일의 몇번째 줄에 위치해 있는지 보여줌.
 		},
 		// js 셋팅
 		js = {

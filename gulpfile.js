@@ -53,7 +53,8 @@ gulp.task('scss', function() {
 	.pipe(compass({ // 사스 프레임워크 컴파스 호출
 		css: config.scss_set.target, // scss 에서 css 로 변환될 위치 지정
 		sass: config.scss_set.compasssrc, //컴파스 동작할 scss 경로 지정
-		style: 'expanded' // css 아웃풋 설정, nested, expanded, compact, compressed
+		style: config.scss_set.style, // css 아웃풋 설정
+		comments: config.scss_set.comments // 주석 표시여부 설정
 	}))
 	.pipe( gulp.dest(config.scss_set.target) ) //css로 변환된 코드를 보낼 css 디렉토리 지정
 	.pipe(connect.reload())
@@ -94,7 +95,6 @@ gulp.task('cssmin', function() {
 	gulp
 		.src(config.cssmin_set.src) // css 타겟 설정
 		.pipe(connect.reload()) // 타겟 css 자동 리로드
-		.pipe(gulpif(config.cssmin_set.uglify, uglifycss())) //css 코드 압축
 		.pipe(gulpif(config.cssmin_set.rename, rename({suffix:'.min'}))) //압축된 css 파일명에 .min 붙임
 		.pipe(gulp.dest(config.cssmin_set.cssmin_src)); //압축된 css 파일이 생성될 위치 지정
 });
