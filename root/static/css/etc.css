@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* © charset setting output from css */
+.test {
+  width: 300px;
+  height: 150px;
+  margin: 30px;
+  background: #eee;
+}
+.test ul {
+  list-style: none;
+  padding: 10px;
+}
+.test ul li {
+  color: #f00;
+  font-weight: bold;
+}

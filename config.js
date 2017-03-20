@@ -5,7 +5,7 @@ module.exports = function() {
 		csssrc       = 'root', // css 가 있는 디렉토리 경로 변수선언
 		scsssrc       = 'root', // scss 가 있는 디렉토리 경로 변수선언
 		jssrc       = 'root', // js 가 있는 디렉토리 경로 변수선언
-		spritesrc = 'root',
+		spritesrc = 'root', // 스프라이트 이미지가 생성될 디렉토리 경로 변수선언
 
 		// html 셋팅
 		html = {
@@ -14,20 +14,6 @@ module.exports = function() {
 		// css 셋팅
 		css = {
 			src  : csssrc + '/static/css/*.css', //css 경로 및 대상 파일
-			minsrc  : csssrc + '/static/css/min/', //min.css 경로 설정
-			concat : true,
-			uglify : true,
-			rename : true,
-		},
-		// 여러 css 파일들을 하나의 css 파일로 셋팅
-		compress_css = {
-			src  : csssrc + '/static/css/{style.css,etc.css}', // 하나의 css파일로 만들 css 경로 및 파일 설정 (파일명으로 우선 저장순위 결정)
-			//src  : csssrc + '/static/css/*.css', // css 파일명 알파벳 순으로 저장됨
-			compress_min_src  : csssrc + '/static/css/min/', //compress.css 가 저장될 경로 설정
-			compress_file : "compress.css", //파일명 설정
-			concat : true,
-			uglify : true,
-			rename : true,
 		},
 		// scss 셋팅
 		scss = {
@@ -61,15 +47,43 @@ module.exports = function() {
 	        save_img: spritesrc + '/static/img/sprite/', // 이미지 저장 위치
 	        save_css: spritesrc + '/static/img/sprite/', // css 저장 위치
 	        algorithm: 'top-down' // top-down	left-right	diagonal	alt-diagonal	binary-tree
+		},
+		// min.css 셋팅
+		cssmin = {
+			src  : csssrc + '/static/css/*.css', //css 경로 및 대상 파일
+			cssmin_src  : csssrc + '/static/css/min/', //min.css 경로 설정
+			concat : true,
+			uglify : true,
+			rename : true,
+		},
+		// min.js 셋팅
+		jsmin = {
+			src  : jssrc + '/static/js/*.js', //js 경로 및 대상 파일
+			jsmin_src  : jssrc + '/static/js/min/', //min.js 경로 설정
+			concat : true,
+			uglify : true,
+			rename : true,
+		},
+		// 여러 css 파일들을 하나의 css 파일로 셋팅
+		compress_css = {
+			src  : csssrc + '/static/css/{style.css,etc.css}', // 하나의 css파일로 만들 css 경로 및 파일 설정 (파일명으로 우선 저장순위 결정)
+			//src  : csssrc + '/static/css/*.css', // css 파일명 알파벳 순으로 저장됨
+			compress_min_src  : csssrc + '/static/css/min/', //compress.css 가 저장될 경로 설정
+			compress_file : "compress.css", //파일명 설정
+			concat : true,
+			uglify : true,
+			rename : true,
 		};
 
 	return {
 		html_set : html,
 		css_set : css,
-		compress_css_set : compress_css,
 		scss_set : scss,
 		js_set : js,
 		server_set : server,
-		sprite_set : sprite
+		sprite_set : sprite,
+		cssmin_set : cssmin,
+		jsmin_set : jsmin,
+		compress_css_set : compress_css
 	};
 };

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* © charset setting output from css */ 
+// © = alt + numpad 0169*/
+// scss 에서만 표시되는 주석, css 에서는 삭제됨
+
+
+.test {
+	width: 300px;
+	height: 150px;
+	margin:30px;
+	background:#eee;
+	ul {
+		list-style:none;
+		padding:10px;
+		li {
+			color: #f00;
+			font-weight: bold;
+		}
+	}
+}
