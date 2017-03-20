@@ -27,9 +27,9 @@ module.exports = function() {
 		js = {
 			src  : jssrc + '/static/js/*.js', //js 경로 및 대상 파일
 			minsrc  : jssrc + '/static/js/min/', //min.js 경로 설정
-			concat : true,
-			uglify : true,
-			rename : true,
+			concat : true, // 다수의 파일을 하나의 파일로 결합
+			uglify : true, // 코드 압축 허용
+			rename : true, // 새 파일명으로 생성
 		},
 		// 웹 서버 설정
 		server = {
