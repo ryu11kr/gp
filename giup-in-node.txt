@@ -17,3 +17,6 @@ npm 명령어
 
 6. gulp 실행
 	> gulp 또는 gulp task명
+
+7. package 글로벌 설치
+	> npm i -g 패키지명 --save

@@ -2,27 +2,28 @@
 
 // 각종 플러그인 로드
 var 
-	gulp     = require('gulp'), //걸프 호출
-	watch    = require('gulp-watch'), //걸프 관찰 호출
-	concat = require('gulp-concat'), //다수의 js 파일을 하나의 파일로 결합
-	uglify = require('gulp-uglify'), // js 파일의 코드를 압축
-	concatcss = require('gulp-concat-css'), //다수의 css 파일을 하나의 파일로 결합
-	uglifycss = require('gulp-uglifycss'), // css 파일의 코드를 압축
-	rename = require('gulp-rename'), //파일명을 새롭게 정의하는 플러그인 구동
-	gulpif = require('gulp-if'), //조건이 true 나 false인 경우 동작
-	sass     = require('gulp-sass'), //걸프 사스 호출
-	compass  = require('gulp-compass'), //걸프 사스 프레임워크 컴파스 호출
-	plumber  = require('gulp-plumber'), //오류있어도 무시하고 진행
-	spritesmith = require('gulp.spritesmith'),
-	connect  = require('gulp-connect-multi')(), //서버 구동
+	gulp        = require('gulp'), //걸프 호출
+	watch       = require('gulp-watch'), //걸프 관찰 호출
+	concat      = require('gulp-concat'), //다수의 js 파일을 하나의 파일로 결합
+	uglify      = require('gulp-uglify'), // js 파일의 코드를 압축
+	concatcss   = require('gulp-concat-css'), //다수의 css 파일을 하나의 파일로 결합
+	uglifycss   = require('gulp-uglifycss'), // css 파일의 코드를 압축
+	rename      = require('gulp-rename'), //파일명을 새롭게 정의하는 플러그인 구동
+	gulpif      = require('gulp-if'), //조건이 true 나 false인 경우 동작
+	sass        = require('gulp-sass'), //걸프 사스 호출
+	compass     = require('gulp-compass'), //걸프 사스 프레임워크 컴파스 호출
+	plumber     = require('gulp-plumber'), //오류있어도 무시하고 진행
+	spritesmith = require('gulp.spritesmith'), //이미지 스프라이트 자동생성
+	fileinclude = require('gulp-file-include'), //html include
+	connect     = require('gulp-connect-multi')(), //서버 구동
 	
-	config   = require('./config')(); // 환경설정 ./config.js 로드
+	config      = require('./config')(); // 환경설정 ./config.js 로드
 
 // 모두 실행
 gulp.task('default', ['watch',  'connect']);
 
 // 관찰
-gulp.task('watch', function(){
+gulp.task('watch', ['fileinclude'], function(){
 	watch(config.scss_set.src, function() { //scss 업무 관찰
 		gulp.start('scss'); //scss task 호출
 	});
@@ -33,7 +34,10 @@ gulp.task('watch', function(){
 		gulp.start('html'); //html task 호출
 	});
 	watch(config.js_set.src, function() { //js 업무 관찰
-		gulp.start('js'); //css task 호출
+		gulp.start('js'); //js task 호출
+	});
+	watch(config.fileinclude_set.src, function() { //fileinclude 업무 관찰
+		gulp.start('fileinclude'); //fileinclude task 호출
 	});
 });
 
@@ -115,4 +119,21 @@ gulp.task('compresscss', function() {
 		.pipe(gulpif(config.compress_css_set.uglify, uglifycss())) // css 코드 압축
 		.pipe(gulpif(config.rename, gulp.dest(config.compress_css_set.compress_min_src))) // //config.js 에서 하나로 합쳐진 파일이 저장될 위치 받기
 		.pipe(gulp.dest(config.compress_css_set.compress_min_src)); // config.js 에서 셋팅한 폴더와 파일 생성
+});
+// bower 패키지 복사
+gulp.task('bower:copy', function() {
+	gulp
+		.src(config.bower_set.jquery.src) // 복사할 디렉토리 위치
+		.pipe(gulp.dest(config.bower_set.jquery.copy)); // 붙여넣기 할 디렉토리 위치
+});
+// html include
+gulp.task('fileinclude', function() {
+    gulp
+    	.src(config.fileinclude_set.src) //include 코드가 들어간 html 위치 지정
+		.pipe(connect.reload()) // 코드 변경시 실시간 반영
+	    .pipe(fileinclude({
+	        prefix: config.fileinclude_set.prefix, //include 코드 스타일 정의
+	        basepath: config.fileinclude_set.basepath //절대경로를 위한 path 설정
+	    }))
+    	.pipe(gulp.dest(config.fileinclude_set.dest)); //include 한 코드가 html 로 변환되며 저장될 위치
 });

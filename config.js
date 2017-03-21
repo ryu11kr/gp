@@ -76,6 +76,21 @@ module.exports = function() {
 			uglify : true,
 			rename : true,
 		};
+		// bower 패키지 복사
+		bower = {
+			jquery : {
+				src  : 'bower_components/jquery/**/*',
+				copy  : 'root/static/js/jquery', //
+			}
+			//bower 를 통한 패키지 설치시 코드 이어서 추가.
+		};
+		// html fileinclude
+		fileinclude = {
+			src  : 'root/html/{,*.html,test/**,!include}',
+			prefix: '@@',
+	        basepath: 'root/html/include/',
+			dest  : 'root/html/result/',
+		};
 
 	return {
 		html_set : html,
@@ -86,6 +101,8 @@ module.exports = function() {
 		sprite_set : sprite,
 		cssmin_set : cssmin,
 		jsmin_set : jsmin,
-		compress_css_set : compress_css
+		compress_css_set : compress_css,
+		bower_set : bower,
+		fileinclude_set : fileinclude
 	};
 };
