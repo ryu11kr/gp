@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@import "compass/css3";
+@import "parts/variables";
+
+/* 컨텐츠 css */
+h1 {
+	margin: 40px;
+	color:#0000ff;
+}
+.test {
+	width: 300px;
+	height: 150px;
+	margin:30px;
+	background:#eee;
+	ul {
+		list-style:none;
+		padding:10px;
+		li {
+			color: #f00;
+			font-weight: bold;
+		}
+	}
+}
+.link {
+	padding:20px;
+	a {
+		color:#000;
+		&:hover {
+			color:#f00;
+		}
+	}
+}
+.btn-1 {
+	display:block;
+	width:100px;
+	height:30px;
+	background:#33ff00;
+	border:1px solid #000;
+}
+.btn-2 {
+	@extend .btn-1;
+	margin:10px;
+	color:#ffff33;
+}
+.btn-3 {
+	@extend .btn-1,.btn-2;
+	font-weight:bold;
+}
+.btn {
+	padding:20px;
+	 %button {
+		padding:10px;
+		background:#664433;
+		border:1px solid #334455;
+		color:#fff;
+	}
+	.btn-01 {
+		@extend %button;
+		background:#aa0000;
+	}
+	.btn-02 {
+		@extend %button;
+		background:00aa00;
+	}
+	.btn-03 {
+		@extend %button;
+		background:#0000aa;
+	}
+}
+.doc {
+	margin:20px;
+	padding:5px;
+	width:300px;
+	@include text-notover;
+	border:1px solid #255283;
+	font-family: $font-mg;
+}
+.mixin-hard {
+		@include position(relative, 0, 0);
+		height:100px;
+	.position1 {
+		@include position(absolute, 20px, 30px);
+	}
+	.position2 {
+		@include position(absolute, 40px);
+		width: 70px;
+ 		height: 40px;
+ 		background:rgba(0, 0, 0, 0.6);
+ 		@include transition-property(width);
+ 		@include transition-duration(2s);
+ 		&:hover {
+			width:120px;
+ 		}
+	}	
+}
+$theme:dark;
+$bg-color:null;
+@if $theme == light {
+	$bg-color:#fff;
+}
+@else {
+	$bg-color:#000;
+}
+.if-else {
+	.#{$theme}-theme {
+		background: $bg-color;
+		border:1px solid invert($bg-color);
+		color:invert($bg-color);
+	}
+}
+$col:1;
+@while $col <= 3 {
+	.col-#{$col} {
+		width:50px * $col;
+		border:1px solid #000;
+	}
+	$col: $col + 1;
+}
+@for $col from 18 through 20 {
+	.font-#{$col} {
+		font-size:$col+px;
+	}
+	$col: $col + 1;
+}
+@each $item in 'a','b','c','d' {
+	.text-#{$item}:after {
+		content:$item;
+	}
+}
