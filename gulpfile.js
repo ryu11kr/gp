@@ -3,19 +3,19 @@
 // 각종 플러그인 로드
 var 
 	gulp        = require('gulp'), //걸프 호출
-	watch       = require('gulp-watch'), //걸프 관찰 호출
-	concat      = require('gulp-concat'), //다수의 js 파일을 하나의 파일로 결합
-	uglify      = require('gulp-uglify'), // js 파일의 코드를 압축
-	concatcss   = require('gulp-concat-css'), //다수의 css 파일을 하나의 파일로 결합
-	uglifycss   = require('gulp-uglifycss'), // css 파일의 코드를 압축
-	rename      = require('gulp-rename'), //파일명을 새롭게 정의하는 플러그인 구동
-	gulpif      = require('gulp-if'), //조건이 true 나 false인 경우 동작
-	sass        = require('gulp-sass'), //걸프 사스 호출
 	compass     = require('gulp-compass'), //걸프 사스 프레임워크 컴파스 호출
-	plumber     = require('gulp-plumber'), //오류있어도 무시하고 진행
-	spritesmith = require('gulp.spritesmith'), //이미지 스프라이트 자동생성
-	fileinclude = require('gulp-file-include'), //html include
+	concat      = require('gulp-concat'), //다수의 js 파일을 하나의 파일로 결합
+	concatcss   = require('gulp-concat-css'), //다수의 css 파일을 하나의 파일로 결합
 	connect     = require('gulp-connect-multi')(), //서버 구동
+	fileinclude = require('gulp-file-include'), //html include
+	gulpif      = require('gulp-if'), //조건이 true 나 false인 경우 동작
+	plumber     = require('gulp-plumber'), //오류있어도 무시하고 진행
+	rename      = require('gulp-rename'), //파일명을 새롭게 정의하는 플러그인 구동
+	sass        = require('gulp-sass'), //걸프 사스 호출
+	spritesmith = require('gulp.spritesmith'), //이미지 스프라이트 자동생성
+	uglify      = require('gulp-uglify'), // js 파일의 코드를 압축
+	uglifycss   = require('gulp-uglifycss'), // css 파일의 코드를 압축
+	watch       = require('gulp-watch'), //걸프 관찰 호출
 	
 	config      = require('./config')(); // 환경설정 ./config.js 로드
 
