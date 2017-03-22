@@ -7,9 +7,9 @@
 
 2. git
 	> https://git-scm.com/downloads  
+		(설치시 아래를 확인하고 체크해준다.)  
 		Select> Use Git form the Windows Command Prompt   
 		Select> Checkout Windows-style, commit Unix-style line endings   
-		Select> Use Windows' default console window
 		
 3. node js
 	> https://nodejs.org/ko/
@@ -20,6 +20,8 @@
 
 5. chrome browser
 	> https://www.google.co.kr/chrome/browser/desktop/index.html
+
+(http://www.example.com/){: target="_blank" }
 
 
 셋팅 순서
