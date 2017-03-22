@@ -6,7 +6,7 @@
 	> https://www.sublimetext.com/3
 
 2. git
-	> https://git-scm.com/downloads
+	> https://git-scm.com/downloads  
 		Select> Use Git form the Windows Command Prompt 
 		Select> Checkout Windows-style, commit Unix-style line endings 
 		Select> Use Windows' default console window
