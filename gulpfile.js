@@ -23,7 +23,7 @@ var
 gulp.task('default', ['watch',  'connect']);
 
 // 관찰
-gulp.task('watch', ['fileinclude'], function(){
+gulp.task('watch', ['scss','fileinclude'], function(){
 	watch(config.scss_set.src, function() { //scss 업무 관찰
 		gulp.start('scss'); //scss task 호출
 	});
