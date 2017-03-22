@@ -21,7 +21,7 @@
 5. chrome browser
 	> https://www.google.co.kr/chrome/browser/desktop/index.html
   
-
+  
 셋팅 순서
 
 1. https://github.com/login
@@ -35,7 +35,7 @@
 7. $ gem install compass
 8. $ gulp (웹서버가 구동되며 크롬브라우저에서 index.html 이 열린다.)
   
-
+  
 기능 소개
 
 1. $ gulp 실행시 자동으로 미리 설정한 경로의 index.html 이 크롬 브라우저에서 열린다.
