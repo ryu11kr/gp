@@ -30,10 +30,13 @@
 	> 이동
 3. 원하는 곳에 폴더 생성
 4. 생성한 폴더에서 마우스 오른쪽 클릭후 git bash 실행
-5. $ git clone https://github.com/ryu11kr/gp.git
-6. $ npm install
-7. $ gem install compass
-8. $ gulp (웹서버가 구동되며 크롬브라우저에서 index.html 이 열린다.)
+5. $ git clone https://github.com/ryu11kr/gp.git  
+6. 다운받은 gp 디렉토리에서 git bash 를 실행하고 아래 명령어를 입력한다.  
+	> $npm install
+7. 루비 사스 콤파스모듈을 설치한다.  
+	> $ gem install compass  
+8. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 index.html 이 열린다.
+	> $ gulp  
   
   
 기능 소개
