@@ -21,8 +21,6 @@
 5. chrome browser
 	> https://www.google.co.kr/chrome/browser/desktop/index.html
 
-(http://www.example.com/){: target="_blank" }
-
 
 셋팅 순서
 
