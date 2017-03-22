@@ -7,15 +7,15 @@
 
 2. git
 	> https://git-scm.com/downloads  
-		Select> Use Git form the Windows Command Prompt 
-		Select> Checkout Windows-style, commit Unix-style line endings 
+		Select> Use Git form the Windows Command Prompt   
+		Select> Checkout Windows-style, commit Unix-style line endings   
 		Select> Use Windows' default console window
 		
 3. node js
 	> https://nodejs.org/ko/
 
 4. ruby
-	> https://rubyinstaller.org/
+	> https://rubyinstaller.org/  
 		- check : Add Ruby executable to your PATH 
 
 5. chrome browser
@@ -48,14 +48,14 @@
 7. $ gulp jsmin
 	> js 파일의 코드를 압축하여 새 js 파일을 생성한다. (sample.js > sample.min.js)
 8. $ gulp compresscss
-	> 여러 css 파일의 코드를 압축하여 새 css 파일 하나를 생성한다.
+	> 여러 css 파일의 코드를 압축하여 새 css 파일 하나를 생성한다.  
 		(reset.css + main.css + sub.css = compress.css)
 9. $ gulp sprite
-	> 스프라이트된 이미지와 백그라운드 이미지 좌표가 내장된 css 파일을 생성한다.
+	> 스프라이트된 이미지와 백그라운드 이미지 좌표가 내장된 css 파일을 생성한다.  
 		(config.js 에서 스프라이트시킬 이미지 경로와 각종 셋팅을 하면 된다.)
 10. $gulp bower:copy
-	> bower 패키지 파일을 프로젝트에서 사용하기 위해 카피가 필요할때 사용한다.
+	> bower 패키지 파일을 프로젝트에서 사용하기 위해 카피가 필요할때 사용한다.  
 		(config.js 에서 셋팅 가능하고, 기타 단순히 디렉토리 카피용도로도 사용 가능하다.)
 11. $gulp fileinclude
-	> html 파일에서 include 사용을 돕는다. include 용 html코드를 파일로 분리한다.
+	> html 파일에서 include 사용을 돕는다. include 용 html코드를 파일로 분리한다.  
 		(test.html 에서 인클루드 코드를 작성하면 /result/test.html 에서 완성된다.)
