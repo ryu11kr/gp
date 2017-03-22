@@ -36,7 +36,7 @@
 7. 루비 사스 콤파스모듈을 설치한다.  
 	> $ gem install compass  
 8. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 index.html 이 열린다.
-	> $ gulp  
+	> $ gulp
   
   
 기능 소개
