@@ -16,6 +16,7 @@
 
 4. ruby
 	> https://rubyinstaller.org/  
+		(설치시 아래를 확인하고 체크해준다.)  
 		- check : Add Ruby executable to your PATH 
 
 5. chrome browser
