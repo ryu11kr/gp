@@ -3,23 +3,23 @@
   "version": "1.0.0",
   "description": "걸프 UI개발 시스템",
   "main": "gulpfile.js & config.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
     "gulp-connect-multi": "^1.0.8",
+    "gulp-cssbeautify": "^0.1.3",
     "gulp-file-include": "^1.0.0",
     "gulp-if": "^1.2.5",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
-    "gulp.spritesmith": "^6.3.0",
     "gulp-uglify": "^2.1.0",
     "gulp-uglifycss": "^1.0.6",
-    "gulp-watch": "^3.0.0"
+    "gulp-watch": "^3.0.0",
+    "gulp.spritesmith": "^6.3.0"
   },
   "scripts": {
     "test": "gulp"

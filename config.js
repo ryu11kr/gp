@@ -91,6 +91,11 @@ module.exports = function() {
 	        basepath: 'root/html/include/',
 			dest  : 'root/html/result/',
 		};
+		// 압축된 css 를 다운받아서 압축을 해제하고 작업하고자 할 경우
+		cssbeautify = {
+			src  : 'root/test/css/*.css', // 압축되있는 css 경로
+			dest  : 'root/test/css/', // 압축된 css 파일 그대로 압축풀기. (압축풀은 새 파일 생성 안함)
+		};
 
 	return {
 		html_set : html,
@@ -103,6 +108,7 @@ module.exports = function() {
 		jsmin_set : jsmin,
 		compress_css_set : compress_css,
 		bower_set : bower,
-		fileinclude_set : fileinclude
+		fileinclude_set : fileinclude,
+		cssbeautify_set : cssbeautify
 	};
 };

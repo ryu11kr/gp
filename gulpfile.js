@@ -7,6 +7,7 @@ var
 	concat      = require('gulp-concat'), //다수의 js 파일을 하나의 파일로 결합
 	concatcss   = require('gulp-concat-css'), //다수의 css 파일을 하나의 파일로 결합
 	connect     = require('gulp-connect-multi')(), //서버 구동
+	cssbeautify = require('gulp-cssbeautify'), // 압축된 css 를 expanded 형식으로 풀어줌
 	fileinclude = require('gulp-file-include'), //html include
 	gulpif      = require('gulp-if'), //조건이 true 나 false인 경우 동작
 	plumber     = require('gulp-plumber'), //오류있어도 무시하고 진행
@@ -98,7 +99,7 @@ gulp.task('sprite', function(){
 gulp.task('cssmin', function() {
 	gulp
 		.src(config.cssmin_set.src) // css 타겟 설정
-		.pipe(connect.reload()) // 타겟 css 자동 리로드
+		.pipe(gulpif(config.cssmin_set.uglify, uglifycss())) //css 코드 압축
 		.pipe(gulpif(config.cssmin_set.rename, rename({suffix:'.min'}))) //압축된 css 파일명에 .min 붙임
 		.pipe(gulp.dest(config.cssmin_set.cssmin_src)); //압축된 css 파일이 생성될 위치 지정
 });
@@ -106,7 +107,9 @@ gulp.task('cssmin', function() {
 gulp.task('jsmin', function() {
 	gulp
 		.src(config.jsmin_set.src) // js 타겟 설정
-		.pipe(gulpif(config.jsmin_set.uglify, uglify())) //js 코드 압축
+		.pipe(gulpif(config.jsmin_set.uglify, uglify({
+			preserveComments: 'all'
+		}))) //js 코드 압축
 		.pipe(gulpif(config.jsmin_set.rename, rename({suffix:'.min'}))) //압축된 js 파일명에 .min 붙임
 		.pipe(gulp.dest(config.jsmin_set.jsmin_src)); //압축된 js 파일이 생성될 위치 지정
 });
@@ -136,4 +139,19 @@ gulp.task('fileinclude', function() {
 	        basepath: config.fileinclude_set.basepath //절대경로를 위한 path 설정
 	    }))
     	.pipe(gulp.dest(config.fileinclude_set.dest)); //include 한 코드가 html 로 변환되며 저장될 위치
+});
+// 로컬에서는 서버에서 다운받은  압축된 css 코드를 풀어서 작업하고, 다시 서버 업로드시에는 압축하고 올리기.
+// 압축해재한 css 로 변환
+gulp.task('cssbeautify', function() {
+	gulp
+		.src(config.cssbeautify_set.src) //압축되어져있는 css 파일 위치 설정
+		.pipe(cssbeautify()) //압축된 css 코드 풀기
+		.pipe(gulp.dest(config.cssbeautify_set.dest)); //압축풀을  경로 설정
+});
+// 서버에 올리기전에 css 압축하기
+gulp.task('cssuglify', function() {
+	gulp
+		.src(config.cssbeautify_set.src) //압축풀어져있는 css 파일 위치 설정
+		.pipe(uglifycss()) //압축해제된 css 코드 압축하기
+		.pipe(gulp.dest(config.cssbeautify_set.dest)); //압축할 경로 설정
 });
