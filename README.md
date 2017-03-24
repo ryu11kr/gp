@@ -8,14 +8,15 @@
 2. git
 	> https://git-scm.com/downloads  
 		(설치시 아래를 확인하고 체크해준다.)  
-		Select> Use Git form the Windows Command Prompt   
-		Select> Checkout Windows-style, commit Unix-style line endings   
+		check > Use Git form the Windows Command Prompt   
+		check > Checkout Windows-style, commit Unix-style line endings   
 		
 3. node js
 	> https://nodejs.org/ko/
 
 4. ruby
 	> https://rubyinstaller.org/  
+		(설치시 아래를 확인하고 체크해준다.)  
 		- check : Add Ruby executable to your PATH 
 
 5. chrome browser
@@ -28,10 +29,10 @@
 	> 로그인
 2. https://github.com/ryu11kr/gp
 	> 이동
-3. 원하는 곳에 폴더 생성
-4. 생성한 폴더에서 마우스 오른쪽 클릭후 git bash 실행
+3. 내컴퓨터 원하는 곳에 폴더 생성
+4. 생성한 폴더안에서 마우스 오른쪽 클릭후 git bash 실행
 5. $ git clone https://github.com/ryu11kr/gp.git  
-6. 다운받은 gp 디렉토리에서 git bash 를 실행하고 아래 명령어를 입력한다.  
+6. 다운받은 gp 폴더 안에서 git bash 를 실행하고 아래 명령어를 입력한다.  
 	> $npm install
 7. 루비 사스 콤파스모듈을 설치한다.  
 	> $ gem install compass  
