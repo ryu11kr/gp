@@ -36,7 +36,13 @@
 	> $npm install
 7. 루비 사스 콤파스모듈을 설치한다.  
 	> $ gem install compass  
-8. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 index.html 이 열린다.
+8. jquery라이브러리등 프레임웍 패키지 설치 및 관리를 위한 bower 설치
+	> $ npm install -g bower --save
+9. bower 에서 지원하는 설치 가능한 패키지들중 jquery 설치해보기
+	> $ bower install jquery#1.9.1
+10. bower 로 설치한 jquery 패키지중 불필요한 파일 삭제를 위한 패키지 설치
+	> $ npm i -d preen --save
+11. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 index.html 이 열린다.
 	> $ gulp
   
   
@@ -56,10 +62,13 @@
 		(reset.css + main.css + sub.css = compress.css)
 9. $ gulp sprite
 	> 스프라이트된 이미지와 백그라운드 이미지 좌표가 내장된 css 파일을 생성한다.  
-		(config.js 에서 스프라이트시킬 이미지 경로와 각종 셋팅을 하면 된다.)
-10. $gulp bower:copy
+		(config.js 에서 스프라이트시킬 이미지 경로와 각종 셋팅을 하면 된다.)  
+10. $ gulp fileinclude  
+	> html 파일에서 include 사용을 돕는다. include 용 html코드를 파일로 분리한다.  
+		(test.html 에서 인클루드 코드를 작성하면 /result/test.html 에서 완성된다.)  
+11. $ gulp preen  
+	> 설치한 jquery 패키지에서 jquery.min.js 를 제외한 파일 및 폴더들을 삭제하기  
+		(환경설정은 bower.json 에서 관리한다.)  		
+12. $ gulp bower:copy
 	> bower 패키지 파일을 프로젝트에서 사용하기 위해 카피가 필요할때 사용한다.  
 		(config.js 에서 셋팅 가능하고, 기타 단순히 디렉토리 카피용도로도 사용 가능하다.)
-11. $gulp fileinclude
-	> html 파일에서 include 사용을 돕는다. include 용 html코드를 파일로 분리한다.  
-		(test.html 에서 인클루드 코드를 작성하면 /result/test.html 에서 완성된다.)

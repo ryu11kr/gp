@@ -17,6 +17,7 @@ var
 	uglify      = require('gulp-uglify'), // js 파일의 코드를 압축
 	uglifycss   = require('gulp-uglifycss'), // css 파일의 코드를 압축
 	watch       = require('gulp-watch'), //걸프 관찰 호출
+	preen       = require('preen'), //bower 불필요한 파일 삭제
 	
 	config      = require('./config')(); // 환경설정 ./config.js 로드
 
@@ -141,17 +142,20 @@ gulp.task('fileinclude', function() {
     	.pipe(gulp.dest(config.fileinclude_set.dest)); //include 한 코드가 html 로 변환되며 저장될 위치
 });
 // 로컬에서는 서버에서 다운받은  압축된 css 코드를 풀어서 작업하고, 다시 서버 업로드시에는 압축하고 올리기.
-// 압축해재한 css 로 변환
-gulp.task('cssbeautify', function() {
+gulp.task('cssbeautify', function() { // 압축해재한 css 로 변환
 	gulp
 		.src(config.cssbeautify_set.src) //압축되어져있는 css 파일 위치 설정
 		.pipe(cssbeautify()) //압축된 css 코드 풀기
 		.pipe(gulp.dest(config.cssbeautify_set.dest)); //압축풀을  경로 설정
 });
-// 서버에 올리기전에 css 압축하기
-gulp.task('cssuglify', function() {
+gulp.task('cssuglify', function() { // 서버에 올리기전에 css 압축하기
 	gulp
 		.src(config.cssbeautify_set.src) //압축풀어져있는 css 파일 위치 설정
 		.pipe(uglifycss()) //압축해제된 css 코드 압축하기
 		.pipe(gulp.dest(config.cssbeautify_set.dest)); //압축할 경로 설정
+});
+
+// bower 패키지 불필요한 파일 삭제
+gulp.task('preen', function(cb) {
+	preen.preen({}, cb);
 });

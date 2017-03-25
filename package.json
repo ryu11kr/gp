@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "걸프 UI개발 시스템",
   "main": "gulpfile.js & config.js",
-  "dependencies": {},
+  "dependencies": {
+    "preen": "^1.2.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
@@ -19,7 +21,8 @@
     "gulp-uglify": "^2.1.0",
     "gulp-uglifycss": "^1.0.6",
     "gulp-watch": "^3.0.0",
-    "gulp.spritesmith": "^6.3.0"
+    "gulp.spritesmith": "^6.3.0",
+    "preen": "^1.2.0"
   },
   "scripts": {
     "test": "gulp"
