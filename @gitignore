@@ -4,7 +4,6 @@
 
 node_modules/
 .sass-cache/
-git.set.txt
 bower_components/
 **/result/*
 **/css/*
