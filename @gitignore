@@ -1,6 +1,6 @@
 # github 에 업로드시 제외할 목록(용량 크고 불필요한 놈)등을 아래에 남긴다.
 # 다운받은 @gitignore 파일은 반드시 파일명을 .gitignore 로 바꾼다.
-# .gitignore 파일을 포함한 아래의 디렉토리명이나 파일명은 github 에 업로드 되지 안흔다.
+# .gitignore 파일을 포함한 아래의 디렉토리명이나 파일명은 github 에 업로드 되지 않는다.
 
 node_modules/
 .sass-cache/
