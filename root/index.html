@@ -5,52 +5,275 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="/static/css/show.css" type="text/css">
 	<script src="/static/js/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/static/js/jquery/jquery.easing.1.3.js" type="text/javascript"></script>
 	<script src="/static/js/ui.js" type="text/javascript"></script>
 </head>
 <body>
-	<h1>이 페이지는 index.html 입니다.</h1>
-	<div class="test">
+	<header>
+		<h1><a href="/">index.html</a></h1>
+		<nav>
+			<h2>메뉴</h2>
+			<ul>
+				<li>
+					<a href="/sub/sub1.html">sub1</a>
+					<ul>
+						<li>
+							<a href="/sub/sub1.html">sub1</a>
+						</li>
+						<li>
+							<a href="/sub/sub1.html">sub1</a>
+						</li>
+						<li>
+							<a href="/sub/sub1.html">sub1</a>
+						</li>
+						<li>
+							<a href="/sub/sub1.html">sub1</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/sub/sub2.html">sub2</a>
+					<ul>
+						<li>
+							<a href="/sub/sub2.html">sub2</a>
+						</li>
+						<li>
+							<a href="/sub/sub2.html">sub2</a>
+						</li>
+						<li>
+							<a href="/sub/sub2.html">sub2</a>
+						</li>
+						<li>
+							<a href="/sub/sub2.html">sub2</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/sub/sub3.html">sub3</a>
+					<ul>
+						<li>
+							<a href="/sub/sub3.html">sub3</a>
+						</li>
+						<li>
+							<a href="/sub/sub3.html">sub3</a>
+						</li>
+						<li>
+							<a href="/sub/sub3.html">sub3</a>
+						</li>
+						<li>
+							<a href="/sub/sub3.html">sub3</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/sub/sub4.html">sub4</a>
+					<ul>
+						<li>
+							<a href="/sub/sub4.html">sub4</a>
+						</li>
+						<li>
+							<a href="/sub/sub4.html">sub4</a>
+						</li>
+						<li>
+							<a href="/sub/sub4.html">sub4</a>
+						</li>
+						<li>
+							<a href="/sub/sub4.html">sub4</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<script>gnbMenu(4,0)</script>
+	</header>
+	<div class="content">
+		<h2>롤링배너</h2>
+		<div class="banner_slider">
+			<div class="banner_container">
+				<div id="banner_content">
+					<img src="/static/img/sprite/ico/128-firefox.png" alt="">
+					<img src="/static/img/sprite/ico/128-ie.png" alt="">
+					<img src="/static/img/sprite/ico/128-opera.png" alt="">
+					<img src="/static/img/sprite/ico/128-safari.png" alt="">
+				</div>
+			</div>
+			<div class="banner_nav_container">
+				<ul id="banner_nav">
+					<li><a href="#" rel="1*">1</a></li>
+					<li><a href="#" rel="2*">2</a></li>
+					<li><a href="#" rel="3*">3</a></li>
+					<li><a href="#" rel="4*">4</a></li>
+				</ul>
+				<div>
+					<button id="btn_prev_banner">prev</button>
+					<button id="btn_next_banner">next</button>
+				</div>
+			</div>
+		</div>
+		<h2>아코디언메뉴</h2>
+		<div class="accordion_menu">
+			<div class="menu_item">
+				<a href="#">이미지1</a>
+				<img src="/static/img/sprite/ico/128-firefox.png" alt="">
+			</div>
+			<div class="menu_item">
+				<a href="#">이미지2</a>
+				<img src="/static/img/sprite/ico/128-ie.png" alt="">
+			</div>
+			<div class="menu_item">
+				<a href="#">이미지3</a>
+				<img src="/static/img/sprite/ico/128-opera.png" alt="">
+			</div>
+			<div class="menu_item">
+				<a href="#">이미지4</a>
+				<img src="/static/img/sprite/ico/128-safari.png" alt="">
+			</div>
+		</div>
+		<div class="accordion_menu_w">
+			<div class="menu_item">
+				<a href="#">이미지1</a>
+				<img src="/static/img/sprite/ico/128-firefox.png" alt="">
+			</div>
+			<div class="menu_item">
+				<a href="#">이미지2</a>
+				<img src="/static/img/sprite/ico/128-ie.png" alt="">
+			</div>
+			<div class="menu_item">
+				<a href="#">이미지3</a>
+				<img src="/static/img/sprite/ico/128-opera.png" alt="">
+			</div>
+			<div class="menu_item">
+				<a href="#">이미지4</a>
+				<img src="/static/img/sprite/ico/128-safari.png" alt="">
+			</div>
+		</div>
+		<h2>파일첨부</h2>
+		<div id="uploadBox">
+			<div class="file-upload">
+				<input class="file" title="찾아보기" type="file">
+				<div class="upload-btn">
+					<input class="text" title="피일 첨부하기" readonly="readonly" type="text">
+					<button type="button" class="search" title="찾아보기"><em>찾아보기</em></button>
+					<button type="button" class="add"><em>+ 추가</em></button>
+				</div>
+			</div>
+		</div>
+		<h2>라디오버튼/체크박스</h2>
+		<div class="choice-radio">
+			<form name="name" action="action" method="post">
+				<fieldset>
+					<legend>결혼여부</legend>
+					<span class="style-form-wrap">
+						<input name="marry" id="marry1" class="style-form" type="radio">
+						<label class="choice icon-radio off" for="marry1">미혼</label>
+					</span>
+					<span class="style-form-wrap">
+						<input name="marry" id="marry2" class="style-form" type="radio" checked="checked">
+						<label class="choice icon-radio off" for="marry2">기혼</label>
+					</span>
+				</fieldset>
+			</form>
+		</div>
+		<div class="check-box">
+			<span class="style-form-wrap">
+				<input id="interests1" class="style-form" type="checkbox">
+				<label for="interests1" class="icon-check off">화장품/향수/미용품</label>
+			</span>
+			<span class="style-form-wrap">
+				<input id="interests2" class="style-form" type="checkbox">
+				<label for="interests2" class="icon-check off">컴퓨터/SW</label>
+			</span>
+		</div>
+		<h2>센터레이어</h2>
+		<div class="layer-wrap">
+			<a href="#layerOpen1" class="layer-open">레이어1오픈</a>
+			<a href="#layerOpen2" class="layer-open">레이어2오픈</a>
+			<div id="layerOpen1" class="layer-container">
+				<div class="layer-box">
+					<div>
+						<span>
+							<button class="layer-close">레이어1 닫기</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div id="layerOpen2" class="layer-container">
+				<div class="layer-box second">
+					<div>
+						<span>
+							<button class="layer-close">레이어2 닫기</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h2>placeholder</h2>
+		<div class="txt-field">
+			<input type="text" id="time" class="text">
+			<label for="time">시간이 없다~</label>
+		</div>
+
+
+		<h2>ajax 읽어오기</h2>
+		<button id="xml-btn-load">xml 형식 이미지 읽어들이기</button>
+		<div id="xml-image-container"><!--이미지 들어감--></div>
+		<button id="json_btn_load">json 형식 이미지 읽어들이기</button>
+		<div id="json_image_container"><!--이미지 들어감--></div>
+		<button id="html_btn_load" data="/static/ajax/images.html">html 형식 이미지 읽어들이기</button>
+		<div id="html_image_container"><!--이미지 들어감--></div>
+		<button id="btnSun">sfd</button>
+		<h2>scss test</h2>
+		<div class="test">
+			<ul>
+				<li>test</li>
+				<li>test</li>
+				<li>test</li>
+			</ul>
+		</div>
+		<div class="link"><a href="#">링크</a></div>
+		<button class="btn-1">btn-1</button>
+		<button class="btn-2">btn-2</button>
+		<button class="btn-3">btn-3</button>
+
+		<div class="btn">
+			<button class="btn-03">btn-03</button>
+			<button class="btn-02">btn-02</button>
+			<button class="btn-01">btn-01</button>
+		</div>
+		<p class="doc">.doc 열심히 하자 열심히 하자 열심히 하자 열심히 하자 열심히 하자 </p>
+		<div class="mixin-hard">
+			<div class="position1"><span>position1</span></div>
+			<div class="position2"><span>position2</span></div>
+		</div>
+		<ul class="if-else">
+			<li class="dark-theme">dark</li>
+			<li class="light-theme">light</li>
+		</ul>
 		<ul>
-			<li>test</li>
-			<li>test</li>
-			<li>test</li>
+			<li class="col-1">col-1</li>
+			<li class="col-2">col-2</li>
+			<li class="col-3">col-3</li>
+		</ul>
+		<ul class="for">
+			<li class="font-18">font-18</li>
+			<li class="font-19">font-19</li>
+			<li class="font-20">font-20</li>
+		</ul>
+		<ul class="text">
+			<li class="text-a">text-a = </li>
+			<li class="text-b">text-b = </li>
+			<li class="text-c">text-c = </li>
+			<li class="text-d">text-d = </li>
 		</ul>
 	</div>
-	<div class="link"><a href="#">링크</a></div>
-	<button class="btn-1">버튼1</button>
-	<button class="btn-2">버튼2</button>
-	<button class="btn-3">버튼3</button>
-
-	<div class="btn">
-		<button class="btn-03">버튼 10</button>
-		<button class="btn-02">버튼 20</button>
-		<button class="btn-01">버튼 30</button>
-	</div>
-	<p class="doc">열심히 하자 열심히 하자 열심히 하자 열심히 하자 열심히 하자 </p>
-	<div class="mixin-hard">
-		<div class="position1"><span>position1</span></div>
-		<div class="position2"><span>position2</span></div>
-	</div>
-	<ul class="if-else">
-		<li class="dark-theme">dark</li>
-		<li class="light-theme">light</li>
-	</ul>
-	<ul>
-		<li class="col-1">col-1</li>
-		<li class="col-2">col-2</li>
-		<li class="col-3">col-3</li>
-	</ul>
-	<ul class="for">
-		<li class="font-18">font-18</li>
-		<li class="font-19">font-19</li>
-		<li class="font-20">font-20</li>
-	</ul>
-	<ul class="text">
-		<li class="text-a"></li>
-		<li class="text-b"></li>
-		<li class="text-c"></li>
-		<li class="text-d"></li>
-	</ul>
-
+	<footer>
+		<address>footer~</address>
+		<div class="scroll-top">
+			<div>
+				<a href="#">top</a>
+			</div>
+		</div>
+	</footer>
+	<div class="dim"></div>
 </body>
 </html>

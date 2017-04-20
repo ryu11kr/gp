@@ -1,12 +1,20 @@
 @charset "UTF-8";
-$font-mg : Malgun Gothic,'맑은 고딕',AppleGothic,Dotum,'돋움',sans-serif;
+// 반복적으로 사용되는 코드관리용 scss
+$font-mg : Malgun Gothic,'맑은 고딕',AppleGothic,Dotum,'돋움',sans-serif; //$ 변수 선언, 값만 필요할경우 호출.
+
+// 자주 사용되는 코드를 mixin 으로 분리.
 @mixin text-notover {
 	display:block;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-@mixin position($type, $t, $l:18px) {
+@mixin container-after {
+	content:" ";
+	display:block;
+	clear:both;
+}
+@mixin position($type, $t, $l:18px) { //mixin name(인자값들)
 	position:$type;
 	top:$t;
 	left:$l;

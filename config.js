@@ -1,6 +1,6 @@
 module.exports = function() {
 
-	var 
+	var
 		htmlsrc       = 'root', // html 이 있는 디렉토리 경로 변수선언
 		csssrc       = 'root', // css 가 있는 디렉토리 경로 변수선언
 		scsssrc       = 'root', // scss 가 있는 디렉토리 경로 변수선언
@@ -42,9 +42,9 @@ module.exports = function() {
 		},
 		// 스프라이트 이미지 셋팅
 		sprite = {
-			src  : spritesrc + '/static/img/sprite/ico/*.png',
+			src  : spritesrc + '/static/img/sprite/form/*.png',
 			imgName: 'sp_all.png',	// 완성된 스프라이트 이미지의 파일명
-	        padding: 4,	// 이미지들간의 간격 설정
+	        padding: 20,	// 이미지들간의 간격 설정
 	        cssName: 'sp_all.css', // 클래스파일명
 	        save_img: spritesrc + '/static/img/sprite/', // 이미지 저장 위치
 	        save_css: spritesrc + '/static/img/sprite/', // css 저장 위치

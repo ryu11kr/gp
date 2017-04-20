@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<image_list>
+		<image>
+			<title>이미지1</title>
+			<url>/static/img/sprite/ico/128-firefox.png</url>
+		</image>
+		<image>
+			<title>이미지2</title>
+			<url>/static/img/sprite/ico/128-ie.png</url>
+		</image>
+		<image>
+			<title>이미지3</title>
+			<url>/static/img/sprite/ico/128-opera.png</url>
+		</image>
+		<image>
+			<title>이미지4</title>
+			<url>/static/img/sprite/ico/128-safari.png</url>
+		</image>
+	</image_list>

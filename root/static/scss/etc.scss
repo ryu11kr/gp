@@ -3,12 +3,275 @@
 @import "compass/css3";
 @import "parts/variables";
 
-/* 컨텐츠 css */
-h1 {
-	margin: 40px;
-	color:#0000ff;
-	text-decoration:underline;
+
+/* header */
+header {
+	nav {
+		ul {
+			li {
+				position:relative;
+				float:left;
+				padding:0 10px;
+				ul {
+					position:absolute;
+					left:-9999px;
+					background:#fff;
+					border:1px solid #777;
+					z-index:1000;
+					&.show {
+						left:0;
+					}
+				}
+			}
+			&:after {
+				@include container-after;
+			}
+			a.on {
+				color:#f00;
+			}
+		}
+	}
 }
+/* content */
+.content {
+	border-top:1px solid #777;
+	border-bottom:1px solid #777;
+}
+//롤링배너
+.banner_slider {
+	background-color:#ececec;
+	.banner_container {
+		position:relative;
+		width:128px;
+		height:128px;
+		margin:10px;
+		overflow:hidden;
+		border:8px solid #ff0000;
+		#banner_content {
+			position:absolute;
+			width:128*4 + px;
+			img {
+				float:left;
+			}
+		}
+	}
+	.banner_nav_container {
+		position:relative;
+		height:30px;
+		border:8px solid #ff0000;
+		line-height:30px;
+		vertical-align:middle;
+		border:8px solid #ff0000;
+		#banner_nav {
+			position:absolute;
+			right:0;
+			list-style:none;
+			border:8ox solid #ff0000;
+			li {
+				display:inline;
+				width:35px;
+				height:27px;
+				float:left;
+				a {
+					float:left;
+					font-size:9px;
+					width:27px;
+					height:27px;
+					line-height:27px;
+					text-align:center;
+					vertical-align:middle;
+					&.select {
+						color:#f00;
+						font-weight:bold;
+					}
+				}
+			}
+		}
+		button {
+			height:27px;
+			padding:0 10px;
+		}
+	}
+}
+//아코디언메뉴
+.accordion_menu {
+	.a,img {
+		display:block;
+	}
+	img {
+		position:relative;
+		left:-9999px;
+		width:0;
+		height:0;
+	}
+	img.show {
+		left:0;
+		width:auto;
+		height:auto;
+	}
+}
+.accordion_menu_w {
+	margin:5px 0 0;
+	padding:10px 0 0;
+	border-top:1px dashed #777;
+	div {
+		overflow:hidden;
+		float:left;
+		width:70px;
+		height:128px;
+		background:#eee;
+		border-top:1px solid #777;
+		border-bottom:1px solid #777;
+		border-right:1px solid #777;
+		a, img {
+			float:left;
+		}
+		a {
+			width:70px;
+			height:100%;
+			padding:5px;
+			background:#eee;
+			border-left:1px solid #777;
+			box-sizing:border-box;
+		}
+		img {
+			border-left:1px solid #777;
+		}
+	}
+	&:after {
+		@include container-after;
+	}
+}
+//파일첨부
+div.file-upload {
+	position:relative;
+	width:100%;
+	.file {
+		position:relative;
+		z-index:2;
+		opacity:0;
+	}
+	.upload-btn {
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+	}
+}
+//라디오버튼 & 체크박스
+.icon-check.off {
+	background-image: url(/static/img/sprite/sp_form.png);
+	background-position: 0px 0px;
+	background-repeat:no-repeat;
+	width: 20px;
+	height: 20px;
+	padding:0 0 0 25px;
+	&:hover {
+		background-image: url(/static/img/sprite/sp_form.png);
+		background-position: 0px -80px;
+	}
+}
+.icon-check.on {
+	background-image: url(/static/img/sprite/sp_form.png);
+	background-position: 0px -40px;
+	background-repeat:no-repeat;
+	width: 20px;
+	height: 20px;
+	padding:0 0 0 25px;
+}
+.icon-radio.off {
+	background-image: url(/static/img/sprite/sp_form.png);
+	background-position: 0px -120px;
+	background-repeat:no-repeat;
+	width: 20px;
+	height: 20px;
+	padding:0 0 0 25px;
+	&:hover {
+		background-image: url(/static/img/sprite/sp_form.png);
+		background-position: 0px -200px;
+	}
+}
+.icon-radio.on {
+	background-image: url(/static/img/sprite/sp_form.png);
+	background-position: 0px -160px;
+	background-repeat:no-repeat;
+	width: 20px;
+	height: 20px;
+	padding:0 0 0 25px;
+}
+//센터 레이어
+.layer-wrap {
+	> button {
+
+	}
+	.layer-container {
+		overflow-y:auto;
+		position:fixed;
+		left:-9999px;
+		top:0;
+		z-index:150;
+		width:100%;
+		height:100%;
+		.layer-box {
+			position:absolute;
+			left:-9999px;
+			width:500px;
+			height:500px;
+	 		background:#000;
+			border:1px solid #ff0;
+			z-index:100;
+			> div {
+				display:table;
+				width:100%;
+				height:100%;
+				text-align:center;
+				> span {
+					display:table-cell;
+					vertical-align:middle;
+				}
+			}
+		}
+		.layer-box.second {
+			width:300px;
+			height:300px;
+		}
+	}
+	.layer-container.show {
+		left:0;
+	}
+}
+//placeholder
+
+.txt-field {
+	position:relative;
+	width:auto;
+	height:33px;
+	padding:0 10px;
+	background:#fff;
+	border:1px solid #d0d0d0;
+}
+.txt-field label {
+	position:absolute;
+	top:8px;
+	left:11px;
+	color:#444;
+	cursor:text;
+}
+.txt-field .text {
+	width:100%;
+	height:31px;
+	padding:0;
+	border:1px solid #fff;
+	color:#444;
+	line-height:31px;
+}
+
+
+
+
+
+
+
 .test {
 	width: 300px;
 	height: 150px;
@@ -34,18 +297,19 @@ h1 {
 }
 .btn-1 {
 	display:block;
-	width:100px;
-	height:30px;
-	background:#33ff00;
-	border:1px solid #000;
 }
 .btn-2 {
-	@extend .btn-1;
-	margin:10px;
-	color:#ffff33;
+	@extend .btn-1; //extend 로 원하는 클래스명 불러옴.
+	width:100px;
+	height:30px;
+}
+%btn-border { //가상의 선택자를 생성할수 있음.
+	border:2px solid #f00;
+	border-radius:5px;
 }
 .btn-3 {
 	@extend .btn-1,.btn-2;
+	@extend %btn-border; //extend 로 %선택자 불러올경우 .btn-3 가 한번 더 생성됨.
 	font-weight:bold;
 }
 .btn {
@@ -73,12 +337,12 @@ h1 {
 	margin:20px;
 	padding:5px;
 	width:300px;
-	@include text-notover;
+	@include text-notover; //variables.scss 의 mixin 코드 호출
 	border:1px solid #255283;
-	font-family: $font-mg;
+	font-family: $font-mg; //변수 호출
 }
 .mixin-hard {
-		@include position(relative, 0, 0);
+		@include position(relative, 0, 0); //인자값 넣기
 		height:100px;
 	.position1 {
 		@include position(absolute, 20px, 30px);
@@ -93,8 +357,9 @@ h1 {
  		&:hover {
 			width:120px;
  		}
-	}	
+	}
 }
+
 $theme:dark;
 $bg-color:null;
 @if $theme == light {
@@ -127,5 +392,36 @@ $col:1;
 @each $item in 'a','b','c','d' {
 	.text-#{$item}:after {
 		content:$item;
+	}
+}
+/* footer */
+footer {
+	height:300px;
+	/* scroll top button */
+	.scroll-top {
+		display:none;
+		position:fixed;
+		width:50px;
+		height:50px;
+		bottom:-100px;
+		right:0;
+		float:right;
+		div {
+			display:table;
+			height:100%;
+			a {
+				display:table-cell;
+				width:100%;
+				height:100%;
+				background:rgba(0,0,0,0.5);
+				border:1px solid #000;
+				border-radius:10px;
+				text-align:center;
+				vertical-align:middle;
+			}
+		}
+	}
+	&:after {
+		@include container-after;
 	}
 }

@@ -29,7 +29,9 @@ git 처리 순서
 	> git pull (git pull origin master)
 
 * 여러명이 하나의 git server 에서 작업할경우에는 9번 먼저 실행후 1번 실행
-
+* 기존 깃허브에 있는 저장소 로컬에 복제하기
+	> git clone https://github.com/유저명/저장소명.git
+ 
 
 git etc 명령어
 
