@@ -401,28 +401,60 @@ function placeholder(){
 	$('input.text').trigger('blur');
 }
 //스코롤 탑 버튼
-function scrollTop(){
-	var containerOffset = $( '.content' ).offset();;
+function scrollWheelTop(){
+	var containerOffset = $( '.content' ).offset();
 	var footerOffset = $( 'footer' );
 	var btnScrollTop = $( '.scroll-top' )
 	var moveScrollTop = $( '.scroll-top a' )
-	if ($(window).scrollTop() > containerOffset.top ) {
-        $(btnScrollTop).fadeIn();
-    } else {
-        $(btnScrollTop).fadeOut();
-    }
-	if($(window).scrollTop() + $(window).height() < $(document).height() - $(footerOffset).height()) {
-	        $(btnScrollTop).css({bottom: '7px', position: 'fixed'});
+	function set(){
+		if ($(window).scrollTop() > containerOffset.top ) {
+	        $(btnScrollTop).fadeIn();
+	    } else {
+	        $(btnScrollTop).fadeOut();
+	    }
+		if($(window).scrollTop() + $(window).height() < $(document).height() - $(footerOffset).height()) {
+		        $(btnScrollTop).css({bottom: '7px', position: 'fixed'});
+		}
+		if($(window).scrollTop() + $(window).height() > $(document).height() - $(footerOffset).height()) {
+		        $(btnScrollTop).css({bottom: '80px', position: 'relative'});
+		}
+		$(moveScrollTop).on('click', function(){
+	    	$('html, body').stop().animate({scrollTop: $('body').offset().top}, 1000);
+	    	return false;
+	    });
 	}
-	if($(window).scrollTop() + $(window).height() > $(document).height() - $(footerOffset).height()) {
-	        $(btnScrollTop).css({bottom: '80px', position: 'relative'});
-	}
-	$(moveScrollTop).on('click', function(){
-    	$('html, body').stop().animate({scrollTop: $('body').offset().top}, 1000);
-    	return false;
-    });
+	$(window).scroll(function() {
+		set();
+	});
 }
+//고정식 메뉴
+function moveTopMenu(){
+		var menuOffset = $( 'header > nav > ul' ).offset();
+		var target = $( 'header' );
+	function set(){
+		if ($(window).scrollTop() > menuOffset.top ) {
+		    $(target).addClass('move');
+		} else {
+			$(target).removeClass('move');
+		}
+	}
+	$(window).scroll(function() {
+		set();
+	});
+}
+//progressbar
+function progressbar(){
+	$(window).scroll(function () {
+		var s = $(window).scrollTop(),
+		d = $(document).height(),
+		c = $(window).height(),
+		scrollPercent = (s / (d-c)) * 100,
+		position = scrollPercent,
+		number = parseInt (position) + '%';
+		$(".progressbar").css({width: number});
 
+	});
+}
 $(document).ready(function() {
 	h1test(); /* h1 함수 실행 */
 	bannerSlider();
@@ -435,12 +467,12 @@ $(document).ready(function() {
 	htmlAjax();
 	xmlAjax();
 	jsonAjax();
+	scrollWheelTop();
+	moveTopMenu();
+	progressbar();
 });
 $(window).resize(function() {
 	centerLayer();
-});
-$(window).scroll(function() {
-	scrollTop();
 });
 
 
