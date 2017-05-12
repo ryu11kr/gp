@@ -4,6 +4,7 @@
   "description": "걸프 UI개발 시스템",
   "main": "gulpfile.js & config.js",
   "dependencies": {
+    "gulp": "^3.9.1",
     "preen": "^1.2.0"
   },
   "devDependencies": {
