@@ -72,3 +72,8 @@
 12. $ gulp bower:copy
 	> bower 패키지 파일을 프로젝트에서 사용하기 위해 카피가 필요할때 사용한다.  
 		(config.js 에서 셋팅 가능하고, 기타 단순히 디렉토리 카피용도로도 사용 가능하다.)
+
+
+주의 사항
+# 다운받은 @gitignore 파일은 반드시 파일명을 .gitignore 로 바꾼다.  
+# .gitignore 파일을 포함한 .gitignore 파일안에 작성된 디렉토리명이나 파일명은 github 에 업로드 되지 않는다.  
