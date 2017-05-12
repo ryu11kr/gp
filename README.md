@@ -31,10 +31,11 @@
 	> 이동
 3. 내컴퓨터 원하는 곳에 폴더 생성
 4. 생성한 폴더안에서 마우스 오른쪽 클릭후 git bash 실행
-5. $ git clone https://github.com/ryu11kr/gp.git  
+5. 아래 명령어를 입력해주면 gp 디렉토리가 설치된다.
+	> $ git clone https://github.com/ryu11kr/gp.git  
 6. 다운받은 gp 폴더 안에서 git bash 를 실행하고 아래 명령어를 입력한다.  
 	> $npm install
-7. 루비 사스 콤파스모듈을 설치한다.  
+7. 루비 사스 콤파스모듈을 설치한다. (scss 로 작성한 웹문서인관계로 scss를 css로 변환해주는 compass모듈을 설치해야 한다.)  
 	> $ gem install compass  
 8. jquery라이브러리등 프레임웍 패키지 설치 및 관리를 위한 bower 설치
 	> $ npm install -g bower --save
@@ -42,9 +43,9 @@
 	> $ bower install jquery#1.9.1
 10. bower 로 설치한 jquery 패키지중 불필요한 파일 삭제를 위한 패키지 설치
 	> $ npm i -d preen --save
-11. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 index.html 이 열린다.
+11. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 gp/root 디렉토리 안의 index.html 이 열린다.
 	> $ gulp  
-12. 실행 안될경우 gulp 를 글로벌 설치한다.  
+12. 실행 안될경우 gulp 를 글로벌 설치한다.
 	> $ npm install -g --save gulp  
   
 기능 소개
