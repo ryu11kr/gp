@@ -42,10 +42,10 @@ module.exports = function() {
 		},
 		// 스프라이트 이미지 셋팅
 		sprite = {
-			src  : spritesrc + '/static/img/sprite/form/*.png',
-			imgName: 'sp_all.png',	// 완성된 스프라이트 이미지의 파일명
+			src  : spritesrc + '/static/img/form/*.png',
+			imgName: 'sp_form.png',	// 완성된 스프라이트 이미지의 파일명
 	        padding: 20,	// 이미지들간의 간격 설정
-	        cssName: 'sp_all.css', // 클래스파일명
+	        cssName: 'sp_form.css', // 클래스파일명
 	        save_img: spritesrc + '/static/img/sprite/', // 이미지 저장 위치
 	        save_css: spritesrc + '/static/img/sprite/', // css 저장 위치
 	        algorithm: 'top-down' // top-down	left-right	diagonal	alt-diagonal	binary-tree

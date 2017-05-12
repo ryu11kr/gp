@@ -191,19 +191,19 @@ div.file-upload {
 }
 //라디오버튼 & 체크박스
 .icon-check.off {
-	background-image: url(/static/img/sprite/sp_form.png);
+	background-image: url(/static/img/sp_form.png);
 	background-position: 0px 0px;
 	background-repeat:no-repeat;
 	width: 20px;
 	height: 20px;
 	padding:0 0 0 25px;
 	&:hover {
-		background-image: url(/static/img/sprite/sp_form.png);
+		background-image: url(/static/img/sp_form.png);
 		background-position: 0px -80px;
 	}
 }
 .icon-check.on {
-	background-image: url(/static/img/sprite/sp_form.png);
+	background-image: url(/static/img/sp_form.png);
 	background-position: 0px -40px;
 	background-repeat:no-repeat;
 	width: 20px;
@@ -211,19 +211,19 @@ div.file-upload {
 	padding:0 0 0 25px;
 }
 .icon-radio.off {
-	background-image: url(/static/img/sprite/sp_form.png);
+	background-image: url(/static/img/sp_form.png);
 	background-position: 0px -120px;
 	background-repeat:no-repeat;
 	width: 20px;
 	height: 20px;
 	padding:0 0 0 25px;
 	&:hover {
-		background-image: url(/static/img/sprite/sp_form.png);
+		background-image: url(/static/img/sp_form.png);
 		background-position: 0px -200px;
 	}
 }
 .icon-radio.on {
-	background-image: url(/static/img/sprite/sp_form.png);
+	background-image: url(/static/img/sp_form.png);
 	background-position: 0px -160px;
 	background-repeat:no-repeat;
 	width: 20px;

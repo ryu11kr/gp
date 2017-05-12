@@ -43,8 +43,9 @@
 10. bower 로 설치한 jquery 패키지중 불필요한 파일 삭제를 위한 패키지 설치
 	> $ npm i -d preen --save
 11. 아래 명령어를 입력하면 웹서버를 구동하고 크롬브라우저에서 index.html 이 열린다.
-	> $ gulp
-  
+	> $ gulp  
+12. 실행 안될경우 gulp 를 글로벌 설치한다.  
+	> $ npm install -g --save gulp  
   
 기능 소개
 
